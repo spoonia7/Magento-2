@@ -1,0 +1,327 @@
+"Reward Points","نقاط الولاء"
+%1 days,%1 أيام
+%1 day,%1 يوم
+ID,معرف
+Title,عنوان
+Action,فعل
+Amount,كمية
+Status,حالة
+Store View,عرض المتجر
+Created On,"انشات في 
+"
+Expire On,تنتهي في
+Reward Account Enable,تمكين حساب المكافآت
+Enable Reward Account,تفعيل حساب المكافآت
+Balance Information,معلومات الرصيد
+Current Balance:,الرصيد الحالي:
+Total Earning Points:,مجموع النقاط المكتسبة:
+Total Spending Points:,مجموع نقاط الإنفاق:
+Update Balance,تحديث الرصيد
+Update Points,نقاط التحديث
+Comment,تعليق
+Points expire after,تنتهي صلاحية النقاط بعد
+"Day(s) since the transaction date. If empty or 0, there is no expiration",يوم (أيام) منذ تاريخ المعاملة. إذا كانت فارغة أو 0 ، فلا يوجد انتهاء صلاحية
+Email Notification,إشعارات البريد الإلكتروني
+Subscribe to balance update,اشترك لتحديث الرصيد
+Subscribe to points expiration notification,اشترك في إشعار انتهاء صلاحية النقاط
+Transactions,المعاملات
+Reward Points,نقاط مكافأة
+Save and Continue Edit,حفظ ومتابعة التعديل
+Earning Rate Information,معلومات معدل الربح
+Spending Rate Information,معلومات معدل الإنفاق
+Website,موقع الكتروني
+Customer Group(s),مجموعة (مجموعات) العملاء
+Earning Rate,معدل الكسب
+Spending Rate,معدل الإنفاق
+The ratio of spends to points earned for that,نسبة الإنفاق إلى النقاط المكتسبة لذلك
+The ratio of points spent to a discount,نسبة النقاط المصروفة إلى الخصم
+Min Point,نقطة الحد الأدنى
+Priority,أولوية
+"If you have similar rates, set the priority of this one (lower number means higher priority with 0 being the highest)",إذا كانت لديك أسعار متشابهة ، فقم بتعيين أولوية هذا (الرقم الأقل يعني أولوية أعلى مع كون القيمة 0 هي الأعلى)
+Point(s),نقطة(نقاط)
+First Name,الاسم الأول
+Last Name,الاسم الأخير
+Email,البريد الإلكتروني
+Group,مجموعة
+Expire,تنتهي
+Cancel,إلغاء
+This action can not be restored. Are you sure?,لا يمكن استعادة هذا الإجراء. هل أنت متأكد؟
+Transaction Information,معلومات العملية التجارية
+Customer,عميل
+Point Amount,كمية النقاط
+Created At,أنشأت في
+Customer Id,معرف العميل
+This comment will not be translated.,لن تتم ترجمة هذا التعليق.
+"day(s) since the transaction date. If empty or 0, there is no expiration.",يوم (أيام) منذ تاريخ المعاملة. إذا كانت فارغة أو 0 ، فلا يوجد انتهاء صلاحية.
+Earned,اكتسب
+Spent,أنفق
+This item does not exists.,هذا العنصر غير موجود.
+The earning rate has been saved successfully.,تم حفظ معدل الكسب بنجاح.
+The spending rate has been saved successfully.,تم حفظ معدل الإنفاق بنجاح.
+An error occurred while saving the rate. Please try again later.' .,حدث خطأ أثناء حفظ السعر. الرجاء معاودة المحاولة في وقت لاحق.
+The earning rate has been deleted successfully.,تم حذف معدل الكسب بنجاح.
+The spending rate has been deleted successfully.,تم حذف معدل الإنفاق بنجاح.
+An error occurred while deleting the rate. Please try again later.,حدث خطأ أثناء حذف السعر. الرجاء معاودة المحاولة في وقت لاحق.
+Cannot delete the rate #%1,لا يمكن حذف المعدل #%1
+A total of %1 record(s) have been deleted.,تم حذف إجمالي%1سجل (سجلات).
+Something went wrong while updating the transaction.' .,حدث خطأ ما أثناء تحديث المعاملة
+A total of %1 record(s) have been cancelled.,تم إلغاء إجمالي%1سجل (سجلات).
+A total of %1 record(s) have been completed.,تم إكمال%1سجل (سجلات).
+No transaction was updated.,لم يتم تحديث أي معاملة.
+Edit Earning Rate #%1,تحرير معدل الكسب #%1
+Add Earning Rate,أضف معدل الربح
+Edit Spending Rate #%1,تعديل معدل الإنفاق #%1
+Add Spending Rate,أضف معدل الإنفاق
+The transaction does not exist.,الصفقة غير موجودة.
+The transaction has been canceled successfully.,تم إلغاء الصفقة بنجاح.
+An error occurred while cancelling transaction. Please try again later.,حدث خطأ أثناء إلغاء الصفقة. الرجاء معاودة المحاولة في وقت لاحق.
+The transaction has been expired successfully.,انتهت المعاملة بنجاح.
+An error occurred while expiring transaction. Please try again later.,حدث خطأ أثناء انتهاء صلاحية المعاملة. الرجاء معاودة المحاولة في وقت لاحق.
+Point amount must be greater than zero,يجب أن تكون قيمة النقاط أكبر من الصفر
+Customer does not exist.,الزبون غير موجود.
+The transaction has been created successfully.,تم إنشاء المعاملة بنجاح.
+An error occurred while creating the transaction. Please try again later.,حدث خطأ أثناء إنشاء المعاملة. الرجاء معاودة المحاولة في وقت لاحق.
+Transaction #%1,المعاملة #%1
+New Transaction,معاملة جديدة
+Saved email settings successfully.,تم حفظ إعدادات البريد الإلكتروني بنجاح.
+Something wrong when saving email notifications.,هناك خطأ ما عند حفظ إشعارات البريد الإلكتروني.
+Each of %1 gets %2 discount,يحصل كل%1على خصم %2 
+Invalid rule or rule not active.,قاعدة غير صالحة أو قاعدة غير نشطة
+%1 must be greater than zero.,يجب أن يكون%1أكبر من الصفر.
+No such group %1. Details: %2 field,لا توجد مثل هذه المجموعة %1 . التفاصيل:%2  حقل
+%1 is required,%1مطلوب
+%1 invalid.,%1غير صالح.
+Cannot create transaction. Point amount is invalid.,لا يمكن إنشاء معاملة كمية النقاط غير صالحة.
+Admin Updated,تم تحديث المسؤول
+Updated by Admin,تم التحديث من قبل المسؤول
+Earning Order,ترتيب الكسب
+Earning Refund,استرداد الكسب
+Spending Order,ترتيب الإنفاق
+Spending Refund,استرداد الإنفاق
+Reward Action does not exist,إجراء المكافأة غير موجود
+Totals calculation is not applicable to empty cart.,لا ينطبق حساب الإجماليات على سلة التسوق الفارغة.
+Fixed,مثبت
+Percent,نسبه مئويه
+Invalid points or money rate.,نقاط غير صالحة أو معدل المال.
+The module is disabled,تم تعطيل الوحدة
+Reward account doesn't exist,حساب المكافأة غير موجود
+Reward account id required,مطلوب معرف حساب المكافأة
+Reward account email doesn't exist,البريد الإلكتروني لحساب المكافأة غير موجود
+No such entity id!,لا يوجد مثل  معرف هذا الكيان!
+Direction invalid.,الاتجاه غير صالح.
+Earning,كسب
+Spending,الإنفاق
+Both,كلاهما
+Before Tax,قبل الضرائب
+After Tax,بعد الضريبه
+After Amount,بعد الكمية
+Before Amount,قبل الكمية
+Point To Money,النقطة للمال
+Money To Point,المال للنقطة
+Before amount,قبل الكمية
+After amount,بعد الكمية
+Normal,طبيعي
+Rounding Down,التقريب للاقل
+Rounding Up,التقريب للاعلى
+Pending,قيد الانتظار
+Completed,مكتمل
+Expired,منتهي الصلاحية
+You will earn,سوف تكسب
+Login to earn,سجل الدخول للكسب
+You will spend,سوف تنفق
+Invalid transaction Data,بيانات المعاملة غير صالحة
+Reward account does not exist,حساب المكافأة غير موجود
+Account balance is not enough to take points back.,رصيد الحساب لا يكفي لاستعادة النقاط.
+An error occurred while creating transaction. Please try again later.,حدث خطأ أثناء إنشاء المعاملة. الرجاء معاودة المحاولة في وقت لاحق.
+Invalid transaction data to complete.,بيانات المعاملة غير صالحة لإكمالها.
+Cannot complete this transaction. Maximum points allowed in account balance is %1,لا يمكن إتمام هذه الصفقة. الحد الأقصى للنقاط المسموح بها في رصيد الحساب هو %1 
+An error occurred while completing transaction. Please try again later.,حدث خطأ أثناء إتمام المعاملة. الرجاء معاودة المحاولة في وقت لاحق.
+Invalid transaction data to cancel.,بيانات المعاملة غير صالحة للإلغاء.
+Account balance is not enough to cancel.,رصيد الحساب لا يكفي للإلغاء.
+An error occurred while canceling transaction. Please try again later.,حدث خطأ أثناء إلغاء المعاملة. الرجاء معاودة المحاولة في وقت لاحق.
+Transaction has been expired.,انتهت صلاحية المعاملة 
+Could not expire the transaction ,تعذر انهاء صلاحية المعاملة
+Something went wrong while processing the transaction. Details : %1,حدث خطأ ما أثناء معالجة المعاملة. التفاصيل: %1 
+Transaction has been canceled.,تم إلغاء المعاملة 
+Can't cancel transaction import,لا يمكن إلغاء استيراد المعاملة
+Could not cancel the transaction. Details: %1,لا يمكن إلغاء المعاملة. التفاصيل: %1 
+Customer id required,معرف العميل مطلوب
+Point amount required,قيمة النقطة مطلوبة
+Customer doesn't exist,الزبون غير موجود.
+Transaction id required, معرف المعاملة مطلوب
+Transaction id doesn't exist,معرّف المعاملة غير موجود
+Active,نشط
+Inactive,غير نشط
+Refund Order to Points,طلب استرداد النقاط
+Reward Point Refund,استرداد نقاط المكافأة
+Available Balance,الرصيد المتوفر
+Total Earned,إجمالي الكسب
+Total Spent,إجمال الصرف
+Your Account is currently inactive.,حسابك غير نشط حاليا.
+Reward information,معلومات المكافأة
+Current exchange rates:,أسعار الصرف الحالية:
+Each %1 spent for your order will earn %2.,كل%1يتم إنفاقه لطلبك سيكسب%2 .
+Each %1 can be redeemed for %2.,يمكن استرداد كل%1مقابل%2 .
+Balance limitation:,حدود الرصيد:
+Balance is limited at %1,الرصيد محدود بنسبة %1 
+Day,يوم
+Each earned %1(s) record expires in %2,تنتهي صلاحية كل سجل%1(s) حصل في%2 
+* Required Fields,الحقول مطلوبة *
+Save,حفظ
+Recent Transactions,المعانلات الأخيرة
+View All,عرض الكل 
+Transaction #,معاملة#
+Date,تاريخ
+Expire Date,تاريخ انتهاء الصلاحية
+N/A,N/A
+You have created no transactions.,لم تقم بإنشاء أي معاملات.
+Reward Points Balance Updated at %store_name,تم تحديث رصيد نقاط المكافآت في٪ store_name
+"Dear %name,",عزيزي % اسم 
+"To view more details, please click <a href=""%reward_url"">here</a>.","لعرض مزيد من التفاصيل ، الرجاء النقر <a href=""٪reward_url""> هنا </a>."
+The transaction detail:,تفاصيل المعاملة:
+Transaction amount: ,قيمة التحويل:
+%amount point(s),كمية  نقطة (نقاط) 
+"Transaction status:
+                                            ",حالة المعاملة                                             
+Current balance: ,الرصيد الحالي:
+%balance point(s),نقاط الرصيد
+"Please update us if anything got you confused, we would be willing to
+                                        help as soon as possible.","يرجى إعلامنا إذا كان لديك أي حيرة من أمرك ، فنحن على استعداد لذلك
+                                        المساعدة في أسرع وقت ممكن."
+Your reward points at %store_name is about to expire!,نقاط مكافأتك في٪ store_name على وشك الانتهاء!
+We would like to inform you that your transaction will be expired after %date,نود إبلاغك بأن معاملتك ستنتهي بعد٪ تاريخ
+"Please check more details <a href=""%reward_url"">here</a>.","الرجاء التحقق من مزيد من التفاصيل <a href=""٪reward_url""> هنا </a>."
+The transaction detail,تفاصيل المعاملة
+Transaction amount:,قيمة التحويل:
+"Transaction
+                                            status:",حالة عملية:
+Current balance:,الرصيد الحالي:
+Feel free to send us a word if you need any further helps.,لا تتردد في الإرسال  إلينا إذا كنت بحاجة إلى مزيد من المساعدة.
+Checkout now to earn,ادفع الان لتكسب
+Spend Your Points,أنفق نقاطك
+Choose how many points to spend,اختر عدد النقاط التي تريد إنفاقها
+Maximize my discount with points,تعظيم الخصم الخاص بي بالنقاط
+Select Customer,حدد العميل
+You have %s,تملك %s
+Mageplaza Reward Points,نقاط المكافآت Mageplaza
+General Configuration,الإعدادات العامة
+Enable,تمكين
+Enable/Disable Reward Points,تمكين / تعطيل نقاط المكافآت
+Label in My Account Navigation,ملصق التنقل في حسابي
+Point Label,ملصق النقطة
+In case the number of point is equal to 1.,في حال كان عدد النقاط يساوي 1.
+Plural Point Label,ملصق نقطة الجمع
+In case the number of point is greater than 1.,في حال كان عدد النقاط أكبر من 1.
+Display Point Label,عرض  ملصق النقطة 
+Point label position: Before or after the point amount.,موضع ملصق النقطة: قبل أو بعد مقدار النقطة.
+Zero Amount Label,ملصق المبلغ الصفري
+"This is shown when the customer has 0 (zero) point. Default: ""zero point"" E.g: ""zero"" -> Result: ""Your balance is zero point""","يظهر هذا عندما يكون للعميل 0 (صفر) نقطة. الافتراضي: ""نقطة الصفر"" على سبيل المثال: ""صفر"" -> النتيجة: ""رصيدك هو صفر نقطة"""
+Show Point Icon,إظهار رمز النقطة
+Select Yes to display the point icon,حدد نعم لعرض رمز النقطة
+Reward Points Icon,رمز نقاط المكافآت
+"Recommended size: 25x25. If no file is chosen, the default icon will be used.",الحجم الموصى به: 25x25. إذا لم يتم اختيار أي ملف ، فسيتم استخدام الرمز الافتراضي.
+Maximum Available Points Balance,الحد الأقصى لرصيد النقاط المتاحة
+"If empty or 0, no limitation will be set",إذا كانت فارغة أو 0 ، فلن يتم تعيين أي قيود
+Highlight Point on Storefront,قم بتمييز النقطة على واجهة المتجر
+Show In Cart,عرض في السلة
+Show On Checkout Page,إظهار في صفحة التشيك اوت
+Text Color,لون الخط
+Earning Configuration,إعدادات الكسب
+Rounding Method,طريقة التقريب
+"E.g, 10.2 points generated from an order can be rounded up to 11 points or down to 10 points.",على سبيل المثال ، يمكن تقريب 10.2 نقطة ناتجة عن أمر ما إلى 11 نقطة أو خفضها إلى 10 نقاط.
+Earn Points from Tax,كسب النقاط من الضرائب
+Select Yes to allow earning points from tax,حدد نعم للسماح لكسب النقاط من الضرائب
+Earn Points from Shipping Fee,كسب نقاط من رسوم الشحن
+Select Yes to allow earning points from shipping fee,حدد نعم للسماح بكسب النقاط من رسوم الشحن
+Point Refund,استرداد النقاط
+Select Yes to allow getting points back from customer if an order is refunded,"حدد ""نعم"" للسماح باسترداد النقاط من العميل إذا تم رد أموال أحد الطلبات"
+Sales Earning Process,عملية كسب المبيعات
+Earning Points after Invoice Created,كسب النقاط بعد إنشاء الفاتورة
+"If No is set, customer will get points only when the order is completed","إذا تم تعيين ""لا"" ، سيحصل العميل على نقاط فقط عند اكتمال الطلب"
+Points Expired After,النقاط انتهت بعد
+"Day(s) since the transaction date. If empty or 0, there is no expiration.",يوم (أيام) منذ تاريخ المعاملة. إذا كانت فارغة أو 0 ، فلا يوجد انتهاء صلاحية.
+Spending Configuration,إعدادات الإنفاق
+Minimum Balance to Spend Points,الحد الأدنى من الرصيد لإنفاق النقاط
+"Enter the minimum points in balance that a customer has to earn before spending. If empty or 0, there is no limitation.",أدخل الحد الأدنى من النقاط في الرصيد التي يجب على العميل كسبها قبل الإنفاق. إذا كانت فارغة أو 0 ، فلا حدود.
+Discount Label,بطاقة الخصم
+"It will be displayed in Shopping cart, Checkout page, Order view and Emails",سيتم عرضه في عربة التسوق وصفحة الخروج وعرض الطلب ورسائل البريد الإلكتروني
+Type Maximum Spending Points per Order,اكتب الحد الأقصى لنقاط الإنفاق لكل طلب
+Maximum Spending Points per Order,الحد الأقصى لنقاط الإنفاق لكل طلب
+"Enter the maximum points spent at once. If empty or 0, there is no limitation",أدخل الحد الأقصى من النقاط التي تم إنفاقها مرة واحدة. إذا كانت فارغة أو 0 ، فلا حدود
+Spending Points on Tax,إنفاق النقاط على الضرائب
+Select Yes to allow spending points on tax,حدد نعم للسماح بنقاط الإنفاق على الضرائب
+Spending Points on Shipping Fee,نقاط الإنفاق على رسوم الشحن
+Select Yes to allow spending points on Shipping fee/Shipping tax,حدد نعم للسماح بنقاط الإنفاق على رسوم الشحن / ضريبة الشحن
+Restore Spent Points after Order Refunding,استعادة النقاط المستهلكة بعد استرداد الطلب
+"If Yes is set, when an order is refunded, customer will get the points spent back.","إذا تم تعيين ""نعم"" ، فعند استرداد أحد الطلبات ، سيستعيد العميل النقاط التي تم إنفاقها."
+Use Max Points by Default,استخدم الحد الأقصى للنقاط افتراضيًا
+"If Yes, ""Use Max Points"" checkbox will be checked by default","إذا كانت الإجابة بنعم ،""استخدام الحد الأقصى للنقاط"" يتم تحديد مربع الاختيار  افتراضيًا"
+Display Configuration,عرض الإعدادات
+Display Total Points on Top Links,عرض مجموع النقاط في أهم الروابط
+Display Earning Points on Minicart,عرض نقاط كسب على Minicart
+Email Configuration,إعدادات البريد الإلكتروني
+Enable Email Notification,تمكين إشعارات البريد الإلكتروني.
+Select Yes to enable notification email.,حدد نعم لتمكين إشعارات البريد الإلكتروني.
+Subscribe Customers by Default,اشتراك العملاء افتراضيا
+Sender Email,البريد الإلكتروني للمرسل
+Select a sender email for notification emails.,حدد البريد الالكتروني للمرسل للإشعارات بالبريد الإلكتروني.
+Update Point Balance Email,تحديث البريد الإلكتروني لرصيد النقاط
+Enabled,مفعل
+Update Balance Template,تحديث نموذج الرصيد
+Select an email template used to send customers when their point balance is updated.,حدد قالب بريد إلكتروني يُستخدم لإرسال العملاء عند تحديث رصيد نقاطهم.
+Points Expiration Email,البريد الإلكتروني لانتهاء النقاط
+Send Before,أرسل قبل
+"Day(s). If empty or zero, no reminder email is sent.",أيام). إذا كان فارغًا أو صفرًا ، فلن يتم إرسال بريد إلكتروني للتذكير.
+Points Expiration Template,نموذج انتهاء صلاحية النقاط
+Select an email template used to send customers before a transaction expires.,حدد نموذج بريد إلكتروني يُستخدم لإرسال العملاء قبل انتهاء صلاحية المعاملة.
+Point Balance,رصيد النقاط
+Reward Active,المكافأة نشطة
+Add Rate,إضافة معدل
+Money spent,صرف النقود
+Earning Point(s),كسب النقاط
+Edit,تعديل
+Spending Point(s),نقطة (نقاط) الإنفاق
+Discount received,تم استلام الخصم
+Add Transaction,أضف معاملة
+CSV,CSV
+Are you sure to cancel selected items?,هل أنت متأكد من إلغاء العناصر المحددة؟
+Are you sure to expire selected items?,هل أنت متأكد من انتهاء صلاحية العناصر المحددة؟
+Created Date,تاريح الإنشاء
+View,عرض 
+Reward Earn,كسب المكافأة
+Reward Spent,استهلاك المكافأة 
+Reward Dashboard,لوحة المكافآت
+Back,خلف
+Landing Page,الصفحة المقصودة
+Choose Landing Page,اختر الصفحة المقصودة
+Landing Page Label,تسمية الصفحة المقصودة
+Display Landing Page In Footer Link,عرض الصفحة المقصودة في رابط التذييل
+Landing Page (Reward Points Page),الصفحة المقصودة (صفحة نقاط المكافأة)
+See the workflow of reward system,رؤية منهجية عمل نظام المكافآت
+Step 1,الخطوة 1
+Step 2,الخطوة 2
+Step 3,الخطوة 3
+Step 4,الخطوة 4
+Set up Reward System rules,قم بإعداد قواعد نظام المكافآت
+Customers interact on store,يتفاعل العملاء في المتجر
+Customers get Points,يحصل العملاء على نقاط
+Customers spend points on next purchases,ينفق العملاء نقاطًا على عمليات الشراء التالية
+Rewards program for loyal customers,برنامج المكافآت للعملاء المخلصين
+Reward Points Shopping,نقاط مكافآت التسوق
+"Every time you shop with us, you'll have an even better experience going from surprise to surprise.",في كل مرة تتسوق معنا ، ستتمتع بتجربة أفضل من مفاجأة إلى مفاجأة.
+"It's a pity you could miss it. With the bonus points system, you can earn points when:",إنه لأمر مؤسف أن تفوتك. باستخدام نظام نقاط المكافأة ، يمكنك كسب النقاط عندما:
+Reward point for purchases.,نقطة مكافأة للمشتريات.
+Reward point when creating a new account.,نقطة مكافأة عند إنشاء حساب جديد.
+Reward point when signing up for the newsletter.,نقطة مكافأة عند الاشتراك في النشرة الإخبارية.
+Reward point when writing reviews every time you experience our products. Each of your comments can help us to improve our product and the quality it delivers.,نقطة مكافأة عند كتابة التعليقات في كل مرة تواجه فيها منتجاتنا. يمكن أن يساعدنا كل تعليق من تعليقاتك على تحسين منتجنا والجودة التي يقدمها.
+Reward point when you send an email invitation to a friend.,نقطة مكافأة عندما ترسل دعوة بالبريد الإلكتروني إلى صديق.
+You will receive a reward point on your birthday.,ستحصل على نقطة مكافأة في يوم ميلادك.
+Reward for Social Sharing.,مكافأة للمشاركة الاجتماعية.
+Reward point when you like our page with Facebook.,نقطة مكافأة عندما تعجبك صفحتنا مع Facebook.
+Reward Point when tweeting our a page on Twitter.,نقطة مكافأة عند التغريد بصفحتنا على Twitter.
+You can get Reward points after a few days when you're not logged in and stay logged in to your account.,يمكنك الحصول على نقاط المكافأة بعد بضعة أيام عندما لا تكون مسجلاً للدخول وتبقى مسجلاً للدخول إلى حسابك.
+"You can use the points earned when making a purchase, ... Note that the points you earn may be refunded after you return the order and the time for the bonus points will expire.",يمكنك استخدام النقاط المكتسبة عند إجراء عملية شراء ، ... لاحظ أنه قد يتم استرداد النقاط التي تكسبها بعد إعادة الطلب وستنتهي صلاحية نقاط المكافأة.
+"That's not all, the more you shop, the more benefits and benefits you get with different Milestones and bonus levels. For more information you can see Milestones %1.",هذا ليس كل شيء ، فكلما تسوقت أكثر ، زادت الفوائد والفوائد التي تحصل عليها من خلال مستويات مختلفة ومكافآت مختلفة. لمزيد من المعلومات ، يمكنك مشاهدة المعالم %1 .
+here,هنا
+"Earn points for purchasing order #%1","كسب نقاط لأمر الشراء #%1"
+"My Points and Rewards","نقاطي والمكافآت";

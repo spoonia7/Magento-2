@@ -1,0 +1,21 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Zkood\CouponsSelling\Block\CustomLink" name="customer-coupons">
+                <arguments>
+                    <argument name="path" xsi:type="string">customer/coupons</argument>
+                    <argument name="label" xsi:type="string" translate="true">My Coupons</argument>
+                    <argument name="role" xsi:type="string">customer</argument>
+                </arguments>
+            </block>
+            <block class="Zkood\CouponsSelling\Block\CustomLink" name="seller-coupons">
+                <arguments>
+                    <argument name="path" xsi:type="string">customer/seller/coupons</argument>
+                    <argument name="label" xsi:type="string" translate="true">Coupons</argument>
+                    <argument name="role" xsi:type="string">seller</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

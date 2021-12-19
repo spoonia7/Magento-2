@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Pentaherb\ProductDetail\Block\CurrentCategory" name="current.category" template="Pentaherb_ProductDetail::current_category.phtml" />
+        </referenceContainer>
+        <move element="current.category" destination="product.info.stock.sku" after="product.info.sku"/>
+    </body>
+</page>

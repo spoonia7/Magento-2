@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--    <preference for="Magento\Review\Block\Form" type="Zkood\AdvancedReviews\Block\Review\Form"/>-->
+    <type name="Magento\Review\Block\Form">
+        <plugin name="zkood.allow-only-purchased" type="Zkood\AdvancedReviews\Plugin\Form"/>
+    </type>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 x-mage2(yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block ifconfig="attribute/fieldset/enable_relation_for_customer"
+                   class="Yosto\AttributeRelation\Block\Relation\CustomerRelation"
+                   template="Yosto_AttributeRelation::customer-relation.phtml" />
+        </referenceContainer>
+    </body>
+</page>

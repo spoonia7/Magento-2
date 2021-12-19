@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <container name="coupons-table-container" output="1">
+            <block name="zkood_customer_purchased_coupons" class="Zkood\CouponsSelling\Block\CustomerCoupons"
+                   template="Zkood_CouponsSelling::customer_coupons_cards.phtml" output="1"/>
+        </container>
+    </body>
+</page>

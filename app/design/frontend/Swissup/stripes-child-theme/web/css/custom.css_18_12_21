@@ -1,0 +1,23 @@
+.product-info-main .product-info-stock-sku {
+    display: block;
+    float: none;
+    padding-bottom: 10px;
+    padding-left: 0;
+    text-align: left;
+    vertical-align: top;
+}
+.product-info-main .product.attribute.category .type, .product-info-main .stock.available .type {
+    font-weight: normal;
+    margin-right: 5.5px;
+}
+.product-info-main .product.attribute.category .type::after, .product-info-main .stock.available .type::after {
+    content: ':';
+}
+.product-info-main .product.attribute.category .value, .product-info-main .stock.available .value{
+    display: inline-block;
+}
+.product-info-social-media{
+	width: 100%;
+    display: inline-block;
+    margin: 15px 0;
+}

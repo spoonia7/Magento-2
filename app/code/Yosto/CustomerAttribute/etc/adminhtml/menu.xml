@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_CustomerAttribute::main_menu" title="Attributes"
+             module="Yosto_CustomerAttribute"
+             parent="Magento_Customer::customer"
+             resource="Yosto_CustomerAttribute::customer_attribute"
+             sortOrder="200"/>
+        <add id="Yosto_CustomerAttribute::view_attributes" title="Customer Attributes"
+             module="Yosto_CustomerAttribute" sortOrder="1" parent="Yosto_CustomerAttribute::main_menu"
+             action="yosto_customer_attribute/attribute/index" resource="Yosto_CustomerAttribute::view_attributes" />
+
+        <add id="Yosto_CustomerAttribute::new_attribute" title="Add Customer Attribute"
+             module="Yosto_CustomerAttribute" sortOrder="2" parent="Yosto_CustomerAttribute::main_menu"
+             action="yosto_customer_attribute/attribute/new" resource="Yosto_CustomerAttribute::new_attribute" />
+        <add id="Yosto_CustomerAttribute::system_config" title="Configuration"
+             module="Yosto_CustomerAttribute" sortOrder="5" parent="Yosto_CustomerAttribute::main_menu"
+             action="adminhtml/system_config/edit/section/attribute"
+             resource="Yosto_CustomerAttribute::system_config"/>
+    </menu>
+</config>

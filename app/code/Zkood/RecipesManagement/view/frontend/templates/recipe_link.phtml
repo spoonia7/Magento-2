@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var $block \Zkood\RecipesManagement\Block\RecipesHistory
+ */
+?>
+<span class="menu-title" >
+    <a class="new-recipe" href="<?= $block->getModalLink() ?>"
+   id="<?= $block->getModalLink() == 'javascript:void(0)' ? 'new-recipe' : '' ?>">
+<?= $block->escapeHtml(__('UPLOADING A RECIPE'))?>
+    </a>
+</span>

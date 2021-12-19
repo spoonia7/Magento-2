@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul Software.
+ * 
+ * PHP version 7.0+
+ *
+ * @category  Webkul
+ * @package   Webkul_MobikulApi
+ * @author    Webkul <support@webkul.com>
+ * @copyright Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html ASL Licence
+ * @link      https://store.webkul.com/license.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Theme\Controller\Result\JsFooterPlugin" type="Webkul\MobikulApi\Controller\Result\JsFooterPlugin" />
+    <type name="Magento\Framework\Data\Form\FormKey\Validator">
+        <plugin name="aroundformkey" type="Webkul\MobikulApi\Plugin\Framework\Data\Form\FormKey\Validator" />
+    </type>
+    <type name="Webkul\MobikulApi\Controller\Customer\AddressFormData">
+        <plugin name="afterAddressFormData" type="Webkul\MobikulApi\Plugin\Controller\Customer\AddressFormDataPlugin" />
+    </type>
+</config>

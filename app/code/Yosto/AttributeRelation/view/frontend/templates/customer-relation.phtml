@@ -1,0 +1,29 @@
+<?php
+$relationJson = $block->getRelationJson();
+?>
+
+<script>
+    require(["mage/adminhtml/form"], function() {
+        try {
+            var relationJson = '<?php echo $relationJson ?>';
+            var relationArray = jQuery.parseJSON(relationJson);
+            jQuery.each(relationArray, function (k, v) {
+                if (jQuery('#' + k).length == 0) {
+                    delete relationArray['' + k];
+                }
+            });
+            relationJson = JSON.stringify(relationArray);
+            new FormElementDependenceController(JSON.parse(relationJson));
+        } catch(err) {
+            console.log('Could not do relation: '+err.message);
+        }
+    });
+
+</script>
+
+
+
+
+
+
+

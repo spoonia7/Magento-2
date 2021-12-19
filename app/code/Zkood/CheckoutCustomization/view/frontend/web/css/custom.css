@@ -1,0 +1,4 @@
+div[name="shippingAddress.region"], div[name="shippingAddress.city"] {
+    display: none !important;
+}
+

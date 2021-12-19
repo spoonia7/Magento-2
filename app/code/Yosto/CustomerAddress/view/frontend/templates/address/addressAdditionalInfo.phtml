@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+$collection = $block->getCustomerAddressEditAttributes();
+$parentBlock = $block->getParentBlock();
+
+$addressFieldSetTitle = $block->getAddressFieldsetTitle();
+
+$datetimeFormat ="{$block->getDatetimeFormat()}";
+
+$address = $parentBlock->getAddress();
+if (count($collection)):
+    ?>
+    <fieldset class="fieldset edit address" data-hasrequired="<?php /* @escapeNotVerified */
+    echo __('* Required Fields') ?>">
+        <legend class="legend"><span><?php /* @escapeNotVerified */
+                echo $addressFieldSetTitle ?></span></legend>
+        <br>
+
+        <?php foreach ($collection as $attr): ?>
+            <?php
+            $attribute = $address->getCustomAttribute("{$attr['attribute_code']}");
+            ?>
+            <?php if ($attr['frontend_input'] == 'text'): ?>
+                <?php $text = $block->getLayout()->createBlock('Yosto\CustomerAddress\Block\Widget\Address\Textfield'); ?>
+                <?php echo $text->setAttributeCode("{$attr['attribute_code']}")->setAddressId($address != null ? $address->getId() : 0)->toHtml(); ?>
+            <?php elseif ($attr['frontend_input'] == 'textarea'): ?>
+
+                <?php $text = $block->getLayout()->createBlock('Yosto\CustomerAddress\Block\Widget\Address\Textarea'); ?>
+                <?php echo $text->setAttributeCode("{$attr['attribute_code']}")->setAddressId($address != null ? $address->getId() : 0)->toHtml(); ?>
+
+            <?php elseif ($attr['frontend_input'] == 'date'): ?>
+
+                <?php $_date = $block->getLayout()->createBlock('Yosto\CustomerAddress\Block\Widget\Address\Date'); ?>
+                <?php echo $_date->setAttributeCode($attr['attribute_code'])
+                    ->setDate(
+                        $attribute != null
+                        ? date($datetimeFormat, strtotime($attribute->getValue()))
+                        : $attr['default_value']
+                    )
+                    ->toHtml();
+                ?>
+
+            <?php elseif ($attr['frontend_input'] == 'select'): ?>
+
+                <?php $select = $block->getLayout()->createBlock('Yosto\CustomerAddress\Block\Widget\Address\Select'); ?>
+                <?php echo $select->setAttributeCode("{$attr['attribute_code']}")->setAddressId($address != null ? $address->getId() : 0)->toHtml(); ?>
+            <?php elseif ($attr['frontend_input'] == 'boolean'): ?>
+                <?php $text = $block->getLayout()->createBlock('Yosto\CustomerAddress\Block\Widget\Address\Yesno'); ?>
+                <?php echo $text->setAttributeCode("{$attr['attribute_code']}")->setAddressId($address != null ? $address->getId() : 0)->toHtml(); ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </fieldset>
+<?php endif; ?>

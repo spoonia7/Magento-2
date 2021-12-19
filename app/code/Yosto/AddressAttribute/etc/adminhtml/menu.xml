@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_AddressAttribute::view_address_attributes" title="Address Attributes"
+             module="Yosto_AddressAttribute" sortOrder="3" parent="Yosto_CustomerAttribute::main_menu"
+             action="yosto_address_attribute/attribute/index" resource="Yosto_CustomerAttribute::view_address_attributes" />
+
+        <add id="Yosto_AddressAttribute::new_address_attribute" title="Add Address Attribute"
+             module="Yosto_AddressAttribute" sortOrder="4" parent="Yosto_CustomerAttribute::main_menu"
+             action="yosto_address_attribute/attribute/new" resource="Yosto_CustomerAttribute::new_address_attribute" />
+
+    </menu>
+</config>

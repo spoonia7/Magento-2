@@ -1,0 +1,93 @@
+<?php
+/**
+ * @var $block \Zkood\RecipesManagement\Block\RecipesHistory
+ */
+?>
+<div id="modal" style="display: none">
+    <h3>
+        <?= __('Service Policy') ?>
+    </h3>
+    <ul>
+        <li><?= __('No prescription of non-approved and sealed nature is issued by the doctor.') ?></li>
+        <li><?= __('Our representative will receive the original prescription before delivering the medication to you.') ?></li>
+    </ul>
+    <form action="<?= $block->getActionUrl() ?>" method="post" enctype="multipart/form-data" id="new-recipe-form">
+        <p class="hidden error"><?= __('Please make sure the entered information are valid.') ?></p>
+        <?php echo $this->getBlockHtml('formkey'); ?>
+        <input name="customer_id" type="text" hidden class="hidden" value="<?= $block->getCustomer()->getId() ?>">
+        <fieldset class="fieldset" data-hasrequired="* Required Fields">
+            <div class="field" style="display: none">
+                <label class="label" for="customer_name"><?= __('Your Name') ?>*</label>
+                <div class="control">
+                    <input id="customer_name" type="text" placeholder="<?= __('Your Name') ?>"
+                           value="<?= $block->getCustomer()->getName() ?>"
+                           name="customer_name" required/>
+                </div>
+            </div>
+            <div class="field" style="display: none">
+                <label class="label" for="customer_email"><?= __('Your Email') ?>*</label>
+                <div class="control">
+                    <input id="customer_email" type="email" placeholder="<?= __('Your Email') ?>"
+                           value="<?= $block->getCustomer()->getEmail() ?>"
+                           name="customer_email" required/>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input id="terms_conditions" type="checkbox" placeholder="<?= __('Accept terms & conditions') ?>"
+                           name="terms_conditions" required/>
+                    <label class="label" for="terms_conditions"><?= __('Accept terms & conditions') ?>*</label>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="recipe_image"><?= __('Recipe Image') ?>*</label>
+                <div class="control">
+                    <input type="file" name="recipe_image" id="recipe_image" required
+                           class="input-text"
+                           accept="image/*">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="notes"><?= __('Notes') ?></label>
+                <div class="control">
+                    <textarea id="notes" placeholder="<?= __('Your Notes') ?>"
+                              name="notes"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ], function ($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            title: "<?= $block->escapeHtml(__('Submit New Recipe'))?>",
+            buttons: [{
+                text: "<?= __('Submit Request') ?>",
+                class: '',
+                click: function () {
+                    var form = $('#new-recipe-form');
+                    if (form.valid()) {
+                        $('.error').addClass('hidden');
+                        form.submit();
+                        // this.closeModal();
+                    } else {
+                        $('.error').removeClass('hidden');
+                    }
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal'));
+        $('#new-recipe').on('click', function () {
+            $('#modal').show().modal('openModal');
+        })
+    });
+
+</script>

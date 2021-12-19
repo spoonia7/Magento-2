@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <block class="Yosto\AttributeRelation\Block\Adminhtml\Relation\Selectattribute\Tabs"
+                   name="yosto.attribute.relation.selectattribute.tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Yosto\AttributeRelation\Block\Adminhtml\Relation\Selectattribute\Form"/>
+            <block class="Yosto\AttributeRelation\Block\Adminhtml\Relation\Selectattribute"
+                   name="yosto.attribute.relation.selectattribute"/>
+        </referenceContainer>
+        <referenceContainer name="js">
+            <block class="Magento\Backend\Block\Template" template="Yosto_CustomerAttribute::instance/select-attribute-js.phtml" name="widget_instance_js"/>
+        </referenceContainer>
+    </body>
+</page>

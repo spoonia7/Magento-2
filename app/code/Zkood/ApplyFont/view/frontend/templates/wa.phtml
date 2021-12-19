@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ */
+?>
+<style>
+    #whatsapp-ask {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+    }
+    #whatsapp-ask > img {
+        width: 35px;
+        height: 35px;
+    }
+</style>
+<a id="whatsapp-ask" href="https://api.whatsapp.com/send?phone=96566262616&text=Welcome%20to%20Syrene.skincare" title="<?= __('Ask Us') ?>">
+    <img src="<?= $block->getViewFileUrl('Zkood_ApplyFont::images/whatsapp.svg') ?>" alt="Whatsapp">
+</a>

@@ -1,0 +1,31 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Order</title>
+        <!-- 
+		demo
+		<css src="Kbiz_Payment::css/css.css"/>
+		<script src="Kbiz_Payment::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+    </head> 
+
+    <body>
+
+
+        <referenceContainer name="sidebar.main">
+            <block class="Zfloos\Zfloos\Block\Index\Sidebar" name="payment_index_sidebar" before="-" template="Zfloos_Zfloos::payment_index_sidebar.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Zfloos\Zfloos\Block\Index\Index" name="payment_index_index" template="Zfloos_Zfloos::payment_index_index.phtml"/>
+			<block class="Zfloos\Zfloos\Block\Second\Index" name="payment_second_index" template="Zfloos_Zfloos::test.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

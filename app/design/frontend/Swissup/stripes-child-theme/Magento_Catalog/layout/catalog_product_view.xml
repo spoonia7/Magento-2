@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.attributes" remove="true"/>
+        <referenceBlock name="product.info.addto" remove="true"/>
+        <container name="product.info.price.addtocart" label="Product Info Price Addtocart" htmlTag="div" htmlClass="product-info-price-addtocart" />
+        <container name="product.info.social.media" label="product info social after media" htmlTag="div" htmlClass="product-info-social-media">
+            <block class="Magento\Catalog\Block\Product\View" name="product.info.addto2" template="Magento_Catalog::product/view/addto.phtml">
+                <block class="Magento\Wishlist\Block\Catalog\Product\View\AddTo\Wishlist" name="view.addto.wishlist2" after="view.addto.compare2"
+                       template="Magento_Wishlist::catalog/product/view/addto/wishlist.phtml" />
+                <block class="Magento\Catalog\Block\Product\View\AddTo\Compare" name="view.addto.compare2" 
+                        template="Magento_Catalog::product/view/addto/compare.phtml" >
+                    <arguments>
+                        <argument name="addToCompareViewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Checker\AddToCompareAvailability</argument>
+                    </arguments>
+                </block>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="product.info.mailto2" template="Magento_Catalog::product/view/mailto.phtml"/>		
+		</container>
+        <move element="page.main.title" destination="product.info.main" before="-" />
+        <move element="product.info.review" destination="product.info.main" after="page.main.title" />
+        <move element="product.info.overview" destination="product.info.main" after="product.info.review" />
+        <move element="product.info.type" destination="product.info.stock.sku" after="-" />
+        <move element="product.info.stock.sku" destination="product.info.main" after="product.info.overview" />
+        <move element="product.info" destination="product.info.price.addtocart" after="-"/>
+        <move element="product.info.price" destination="product.info.price.addtocart" before="-"/>
+        <move element="product.info.price.addtocart" destination="product.info.main" after="product.info.stock.sku"/>
+        <move element="mp_rw_review_product" destination="product.info.main" after="-"/>
+        <move element="product.info.social.media" destination="content" after="product.info.media" />
+    </body>
+</page>

@@ -1,0 +1,28 @@
+<?php /** @var $block \Magento\Framework\View\Element\Template */ ?>
+
+<div data-mage-init='{"Zkood_CouponsSelling/js/customer_coupons_ajax_block":{"baseUrl": "<?= /* @noEscape */
+$block->getBaseUrl() ?>"}}'>
+</div>
+
+<canvas id="qr-code"></canvas>
+<script>
+    require(['jquery', 'Zkood_CouponsSelling/js/lib/qrious'], function ($, QRious) {
+
+        // setTimeout(() => {
+        //     $('.coupon-code-string').each(function () {
+        //         generateQRCode($(this).data('code'))
+        //     })
+        // }, 5000)
+
+        function generateQRCode(code) {
+            var qr = new QRious({
+                element:  document.getElementById(code),
+                size: 50
+            });
+            qr.set({
+                foreground: 'black',
+                value: code
+            });
+        }
+    });
+</script>

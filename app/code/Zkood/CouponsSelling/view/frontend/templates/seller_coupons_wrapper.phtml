@@ -1,0 +1,80 @@
+<?php /** @var $block \Magento\Framework\View\Element\Template */ ?>
+
+<style>
+    .error {
+        color: red;
+    }
+
+    .success {
+        color: green;
+    }
+</style>
+
+
+
+<h2><?= __('Redeem Coupon') ?></h2>
+<p id="result-message" style="display: none"></p>
+<div class="form">
+    <form action="<?= $block->getBaseUrl() ?>customer/seller/redeem" method="POST" enctype="multipart/form-data"
+          id="redeem-form">
+        <fieldset class="fieldset" data-hasrequired="* Required Fields">
+            <div class="field">
+                <label class="label" for="coupon_code"><?= __('Coupon Code') ?>*</label>
+                <div class="control">
+                    <input id="coupon_code" type="text" placeholder="<?= __('Type The Code') ?>"
+                           value=""
+                           name="coupon_code" required/>
+                </div>
+            </div>
+
+            <button id="submit-form" class="btn btn-primary">Submit</button>
+        </fieldset>
+
+    </form>
+    <!--    <button class="btn btn-primary" id="read">Or click to read the QR from camera</button>-->
+    <!--    <video id="preview"></video>-->
+</div>
+
+<hr>
+<div data-mage-init='{"Zkood_CouponsSelling/js/seller_coupons_ajax_block":{"baseUrl": "<?= /* @noEscape */
+$block->getBaseUrl() ?>"}}'>
+</div>
+
+
+<!--<script>-->
+<!--    require(['Zkood_CouponsSelling/js/lib/instascan'], function (Instascan) {-->
+<!--        // let scanner = new Instascan.Scanner({video: document.getElementById('preview')});-->
+<!---->
+<!--        Instascan.Camera.getCameras().then(function (cameras) {-->
+<!--            if (cameras.length > 0) {-->
+<!--                console.log('Yes');-->
+<!--            } else {-->
+<!--                console.error('No cameras found.');-->
+<!--            }-->
+<!--        }).catch(function (e) {-->
+<!--            console.error(e);-->
+<!--        });-->
+<!--    })-->
+<!--</script>-->
+
+<script>
+    require(['jquery'], function ($) {
+        $('#redeem-form').on('submit', function (e) {
+            e.preventDefault();
+            $.post("<?= $block->getBaseUrl() ?>customer/seller/redeem",
+                {
+                    coupon_code: $('#coupon_code').val()
+                },
+                function (data) {
+                    $('#result-message').removeClass().addClass(data.error ? 'error' : 'success').html(data.message).show();
+                    setTimeout(() => {
+                        $('#result-message').hide()
+                        $('#coupon_code').val('')
+                        if (!data.error) {
+                            location.reload();
+                        }
+                    }, 3000)
+                });
+        })
+    })
+</script>

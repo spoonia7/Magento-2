@@ -1,0 +1,20 @@
+{
+  "name": "yosto/module-customer-address",
+  "description": "Handle data for checkout page",
+  "require": {
+  },
+  "type": "magento2-module",
+  "version": "2.3.10",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Yosto\\CustomerAddress\\": ""
+    }
+  }
+}

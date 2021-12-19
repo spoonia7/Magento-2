@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Order Status</title>
+    </head>
+
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Zfloos\Zfloos\Block\Index\Fail" name="zfloos_index_fail" template="Zfloos_Zfloos::zfloos_index_fail.phtml" cacheable="false"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

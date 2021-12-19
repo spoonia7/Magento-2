@@ -1,0 +1,41 @@
+<?php 
+/**
+ * Webkul Software.
+ * 
+ * PHP version 7.0+
+ *
+ * @category  Webkul
+ * @package   Webkul_MobikulApi
+ * @author    Webkul <support@webkul.com>
+ * @copyright 2010-2019 Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html ASL Licence
+ * @link      https://store.webkul.com/license.html
+ */
+// @codingStandardsIgnoreFile
+if (!$block->toShow())  {    ?>
+    <div class="mk-downloadlink-container <?= $block->getThemeName(); ?>">
+        <div class="mk-downloadlink-label-container">
+            <label class="mk-downloadlink-label"><?= __("Our apps also available at"); ?></label>
+        </div>
+        <div class="mk-downloadlink-button-container">
+            <a class="mk-downloadlink-playstore-button" href="<?= $block->getUrl("mobikulhttp/downloadlink/openapp", ["_secure"=>$this->getRequest()->isSecure()]); ?>">
+                <img class="mk-downloadlink-image-button" src="<?= $block->getPlaystoreImageUrl(); ?>" alt="<?= __("Play store link"); ?>"/>
+            </a>
+            <a class="mk-downloadlink-appstore-button" href="<?= $block->getAppstoreUrl(); ?>" target="_blank">
+                <img class="mk-downloadlink-image-button" src="<?= $block->getAppstoreImageUrl(); ?>" alt="<?= __("App tore link"); ?>"/>
+            </a>
+        </div>
+        <img class="mk-downloadlink-close-button" src="<?= $block->getCloseButtonImageUrl(); ?>" alt="<?= __("Close button"); ?>" onclick="rememberClicked();"/>
+    </div>
+<?php   $params = [
+            "rememberUrl" => $block->urlHelper->getUrl("mobikulhttp/downloadlink/remember")
+        ];
+        $params = $block->jsonHelper->jsonEncode($params);     ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "downloadlinkQuery": <?php /* @noEscape */echo $params; ?>
+            }
+        }
+    </script>
+<?php } ?>

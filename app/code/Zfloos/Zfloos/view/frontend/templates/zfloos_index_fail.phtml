@@ -1,0 +1,21 @@
+<?php
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance(); 
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$store = $storeManager->getStore();
+$checkout_url = $store->getBaseUrl()."checkout/";
+?>
+<div class="iwd_success_page_wrapper iwd_main_wrapper">
+    <div class="iwd_opc_alternative_wrapper">
+        <div class="iwd_opc_column iwd_opc_success_page_column">
+            <div class="iwd_opc_alternative_column">
+                <div class="iwd_opc_universal_wrapper iwd_opc_column_name">Order Failed/Cancelled</div>
+                <div class="iwd_opc_column_content">
+                    <div class="iwd_opc_universal_wrapper iwd_success_page_info">Your order (#<?php echo $_REQUEST['order']?>) has been Failed/Cancelled. You will receive an email with more details of your purchase.                                                                                                </div>
+                    <div class="iwd_opc_universal_wrapper">
+                        <a href="<?php echo $checkout_url; ?>" class="iwd_opc_button " title="Redirect To Checkout">Redirect To Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

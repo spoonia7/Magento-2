@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Save custom column from sales order to sale order grid-->
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="custom_attribute_billing_address_data" xsi:type="string">sales_order.custom_attribute_billing_address_data</item>
+                <item name="custom_attribute_shipping_address_data" xsi:type="string">sales_order.custom_attribute_shipping_address_data</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

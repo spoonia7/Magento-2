@@ -1,0 +1,39 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Customize by x-mage2 to add custom attributes form
+ */
+
+$attribute = $block->getAttribute();
+$attributeValue = $block->getAttributeValue();
+$attributeCode = $block->getAttributeCode();
+$attributeLabel = $attribute->getStoreLabel() != null ? $attribute->getStoreLabel() : $attribute->getFrontendLabel();
+$attributeFrontendClass = $attribute->getFrontendClass();
+$isRequired = $block->isRequired();
+
+// @codingStandardsIgnoreFile
+?>
+<div
+    class="field <?php echo $attributeCode; ?> <?php echo $isRequired == 1 ? 'required' : '' ?>">
+    <label for="<?php echo $attributeCode ?>" class="label"><span><?php /* @escapeNotVerified */
+            echo $attributeLabel; ?></span></label>
+
+    <div class="control">
+        <select id="<?php /* @escapeNotVerified */
+        echo $attributeCode ?>" name="<?php /* @escapeNotVerified */
+        echo $attributeCode ?>" title="<?php /* @escapeNotVerified */
+        echo $attributeLabel ?>"<?php if ($isRequired): ?> class="validate-select" data-validate="{required:true}"<?php endif; ?> <?php /* @escapeNotVerified */
+        echo $block->getFieldParams() ?>>
+            <?php $options = $block->getSelectOptions(); ?>
+            <?php $value = $attributeValue; ?>
+            <?php foreach ($options as $option): ?>
+                <option value="<?php /* @escapeNotVerified */
+                echo $option->getValue() ?>"<?php if ($option->getValue() == $value) echo ' selected="selected"' ?>><?php /* @escapeNotVerified */
+                    echo __($option->getLabel()) ?></option>
+            <?php endforeach; ?>
+        </select>
+
+    </div>
+</div>

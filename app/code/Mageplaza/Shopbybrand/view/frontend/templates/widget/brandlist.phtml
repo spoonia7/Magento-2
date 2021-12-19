@@ -1,0 +1,110 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Shopbybrand
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+$_config = $this->helper('Sm\Destino\Helper\Data');
+$enableLadyLoading = $_config->getAdvanced('enable_ladyloading');
+$mediaSrc          = $_config->getMediaUrl();
+if ($enableLadyLoading) {
+    $imgClass = 'lazyload';
+} else {
+    $imgClass = '';
+}
+$timeId = time();
+$selectedBrands = $block->getCollection();
+/*echo "<pre>";
+print_r($fetch_brand_name);*/
+if (count($selectedBrands) > 1) : ?>
+    <?= /** @noEscape */ $block->includeCssLib() ?>
+    <div class="block block-brand-feature widget">
+        <?php if ($block->hasData('show_title')) : ?>
+            <div class="primary-title">
+                <h2>
+                <?= /** @noEscape */ __($block->getTitle()) ?>
+                </h2>
+            </div>
+        <?php endif; ?>
+        <div class="block-content">
+            <div class=" grid-product-type products list items product-items" id="feature-brand-carousel-<?= /** @noEscape */ $timeId ?>"
+                 data-mage-init='{"brandSlider": {}}'>
+            <?php foreach ($selectedBrands as $brand) : 
+                $fetch_brand_name = $brand->getData();
+                ?>
+                <div class="item product product-item">
+                    <div class="item-inner">
+                        <div class="product-item-info" data-container="product-grid">
+                   
+                            <div class="product-item-image">
+                                <a href="<?= /** @noEscape */ $block->helper()->getBrandUrl($brand) ?>" class="product photo product-item-photo" tabindex="-1"> 
+                                    <img class="img-responsive brand-image <?php echo $imgClass; ?>" <?php if ($enableLadyLoading) { ?> src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>" data-src="<?php echo $block->helper()->getBrandImageUrl($brand); ?>" <?php } else {?> src="<?= /** @noEscape */ $block->helper()->getBrandImageUrl($brand) ?>"<?php } ?> alt=""/>
+
+                                </a>
+                            </div> 
+
+                            <div class="product details product-item-details">
+                                <div class="product name product-item-name">
+                                    <a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_destino/french/savvy-shoulder-tote.html"><?php echo __($fetch_brand_name['default_value']) ?></a>
+                                </div>
+                            </div>                      
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+            </div> 
+        </div>
+    </div>
+<?php endif; ?>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'owlcarousel'
+    ], function ($) {
+        jQuery(".product-items").owlCarousel({
+            loop: false,
+            autoplay : false,
+            nav : true, 
+            dots: false,
+            navSpeed : 500,
+            dotsSpeed : 500,
+            margin:20,
+
+            responsive:{
+                0:{
+                    items:2
+                },
+                480:{
+                    items:2
+                },
+                768:{
+                    items:2
+                },
+                992:{
+                    items:2
+                },
+                1200:{
+                    items:5
+                }
+            },
+                       
+        });   
+    }); 
+            
+</script>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="Zkood_RecipesManagement::css/bootstrap-grid.min.css"/>
+        <css src="Zkood_RecipesManagement::css/lightbox.min.css"/>
+        <script src="Zkood_RecipesManagement::js/lightbox-images.js"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument name="title" xsi:type="string" translate="true">Recipes History</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="recipes-table-wrapper"
+                   template="Zkood_RecipesManagement::recipes_wrapper.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

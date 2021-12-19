@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Checkout module for Magento
+ *
+ * @package     Yireo_Checkout
+ * @author      Yireo (https://www.yireo.com/)
+ * @copyright   Copyright 2017 Yireo (https://www.yireo.com/)
+ * @license     Open Source License
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_onepage_success"/>
+    <head>
+        <title>Checkout Success Page</title>
+    </head>
+    <body>
+        <attribute name="class" value="checkout_onepage_success"/>
+    </body>
+</page>

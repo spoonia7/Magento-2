@@ -1,0 +1,33 @@
+<?php /** @var $block \Magento\Framework\View\Element\Template */ ?>
+
+<?php
+if ($couponsData = $block->getData('coupons_data')): ?>
+    <table class="email-items">
+        <thead>
+        <tr>
+            <th class="item-info">
+                <?= $block->escapeHtml(__('Items')) ?>
+            </th>
+            <th class="item-qty">
+                <?= $block->escapeHtml(__('Coupons')) ?>
+            </th>
+            <th class="item-price">
+                <?= $block->escapeHtml(__('ValidTo')) ?>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($couponsData as $couponData): ?>
+            <tr>
+                <td class="item-info">
+                    <p class="product-name"><?= $block->escapeHtml($couponData['itemName']) ?></p>
+                    <p class="sku"><?= $block->escapeHtml(__('SKU')) ?>
+                        : <?= $block->escapeHtml($couponData['itemSku']) ?></p>
+                </td>
+                <td class="item-qty"><?= $couponData['code'] ?></td>
+                <td class="item-price"><?= $couponData['validTo'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>

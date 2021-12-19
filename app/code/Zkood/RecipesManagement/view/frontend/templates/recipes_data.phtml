@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var $block \Zkood\RecipesManagement\Block\RecipesHistory
+ */
+?>
+<?php if ($block->getRecipes()): ?>
+<div class="row">
+    <?php foreach ($block->getRecipes() as $recipe): ?>
+    <div class="col-md-3 col-xs-6">
+        <a href="<?= $block->getRecipeImage($recipe->getRecipeImage()) ?>" data-title="<?= $recipe->getCreatedAt() ?>" data-lightbox="recipes-images">
+            <img src="<?= $block->getRecipeImage($recipe->getRecipeImage()) ?>" alt="<?= $recipe->getCreatedAt() ?>">
+        </a>
+    </div>
+    <?php endforeach; ?>
+</div>
+<?php else: ?>
+    <h3>No Recipes Yet!</h3>
+<?php endif; ?>

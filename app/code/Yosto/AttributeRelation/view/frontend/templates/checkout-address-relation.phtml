@@ -1,0 +1,131 @@
+<?php
+$relationJson = $block->getRelationJson();
+$isUsingOPC = $block->isUsingOPC();
+?>
+<script>
+    var relationJson = '<?php echo $relationJson ?>';
+    var isUsingOpc = false;
+    <?php if ($isUsingOPC): ?>
+        isUsingOpc = true;
+    <?php endif ?>
+</script>
+<script>
+    require(["mage/translate", "mage/adminhtml/form"], function ($t) {
+        'use strict';
+        jQuery(document).ready(function () {
+
+            var checkInterval;
+            var index = 0;
+            if (isUsingOpc) {
+                checkInterval = setInterval(function () {
+                    var checkPointOfPageLoad = document.getElementById('shipping-new-address-form');
+                    if (!checkPointOfPageLoad) {
+                        return;
+                    }
+
+
+                    jQuery("#shipping-new-address-form").ready(function () {
+                        setTimeout(function () {
+                            addFormFieldRelation("#shipping-new-address-form");
+                        }, 1500);
+                    });
+                    clearInterval(checkInterval);
+                }, 500);
+            } else {
+                checkInterval = setInterval(function () {
+                    if (jQuery('#payment').is(':visible') && jQuery('#payment').find('.payment-method').length > 0) {
+                        addFormFieldRelation('#payment .payment-method._active');
+                        clearInterval(checkInterval);
+                        return;
+                    }
+                    var checkPointOfPageLoad = document.getElementById('shipping-new-address-form');
+                    if (!checkPointOfPageLoad) {
+                        return;
+                    }
+
+
+                    jQuery("#shipping-new-address-form").ready(function () {
+                        setTimeout(function () {
+                            addFormFieldRelation();
+                        }, 1500);
+                    });
+                    clearInterval(checkInterval);
+
+                }, 500);
+
+            }
+
+            jQuery(document).on('click', '.action-show-popup', function () {
+                addFormFieldRelation();
+            });
+
+            jQuery(document).on('click', '[id^="billing-address-same-as-shipping"]', function () {
+                if(!jQuery(this).is(':checked')) {
+                    if (jQuery('#payment').find('.payment-method').length > 0) {
+                        addFormFieldRelation('#payment .payment-method._active');
+                    } else {
+                        addFormFieldRelation();
+                    }
+                }
+            });
+
+            jQuery(document).on('click', '#payment [name="payment[method]"]', function () {
+                if(jQuery(this).is(':checked')) {
+                    addFormFieldRelation('#payment .payment-method._active');
+                }
+            });
+
+            jQuery(document).on('change', '[name="billing_address_id"]', function () {
+                if (jQuery('[name = "billing_address_id"] option:selected').html() == $t("New Address")) {
+                    addFormFieldRelation();
+                }
+            });
+
+            function addFormFieldRelation(parentElementId) {
+                try {
+
+                    var currentCheckoutStep = '';
+
+                    if (jQuery('#payment').is(':visible')) {
+                        currentCheckoutStep = '#payment';
+                    }
+                    if(parentElementId) {
+                        currentCheckoutStep = parentElementId;
+                    }
+
+                    var relationArray = jQuery.parseJSON(relationJson);
+
+                    jQuery.each(relationArray, function (k, v) {
+                        if (jQuery(currentCheckoutStep + ' [name="' + k + '"]').length == 0) {
+                            delete relationArray['' + k];
+                        }
+                    });
+                    jQuery.each(relationArray, function (k, v) {
+
+                        var newChildId = jQuery(currentCheckoutStep + ' [name="' + k + '"]').attr('id');
+
+                        jQuery.each(v, function (pk, pv) {
+                            var parentId = jQuery(currentCheckoutStep + ' [name="' + pk + '"]').attr('id');
+                            v['' + parentId] = v['' + pk];
+                            delete v['' + pk];
+                            relationArray['' + k] = v;
+                        });
+
+                        relationArray['' + newChildId] = relationArray['' + k];
+
+                        delete relationArray['' + k];
+                    });
+                    var newRelationJson = JSON.stringify(relationArray);
+                    new FormElementDependenceController(JSON.parse(newRelationJson));
+                } catch (err) {
+                    console.log('Could not do relation: ' + err.message);
+                }
+            }
+
+
+        });
+
+    });
+
+
+</script>

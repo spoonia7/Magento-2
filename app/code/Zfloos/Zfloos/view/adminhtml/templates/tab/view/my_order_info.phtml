@@ -1,0 +1,78 @@
+<?php
+/**
+ * @var $block \Rbj\OrderTab\Block\Adminhtml\OrderEdit\Tab\View
+ */
+?>
+
+<?php
+$ordid = $block->getOrderId();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+$connection = $resource->getConnection();
+$query = "SELECT * FROM custom_order_quote where order_id = $ordid"; 
+$collection = $connection->fetchAll($query);
+?>
+ 
+<div class="fieldset-wrapper order-information">
+<?php if(!empty($collection)) { ?>
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php /* @escapeNotVerified */
+            echo __('Quote Address') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+		<?php
+		foreach($collection as $col){
+			
+			$quot_id = $col['quote_id'];
+			$query_quto = "SELECT * FROM quote where entity_id = $quot_id"; 
+			$collection_quo = $connection->fetchAll($query_quto);
+			/* echo"<pre>";
+			print_R($collection_quo); */
+			
+			foreach($collection_quo as $c){
+				$fnc = $c['custom_attribute_shipping_address_data'];
+				$json = json_decode($fnc, true);
+				//echo "<pre>"; print_R($json); 
+				if(!empty($json)){
+				foreach($json as $js){
+					$address_nm = $js['name'];
+					$address_value = $js['value'];
+					?>
+					<tr>
+					<td><?php echo $address_nm ?></td>
+					<td><?php echo $address_value ?></td>
+					</tr>
+					<?php
+				}
+				} else { ?>
+					<tr><td>Nothing is found.</td></tr>
+				<?php }
+			} 
+		}
+	?>
+	
+	</table>
+<?php } ?>	
+	<div class="fieldset-wrapper-title">
+        <span class="title"><?php /* @escapeNotVerified */
+            echo __('Information for new Order tab') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+	<?php
+		
+		?>
+        <?php echo $block->getChildHtml(); ?>
+        <tr>
+            <th><?php /* @escapeNotVerified */
+                echo __('Order ID:') ?></th>
+            <td><?php echo $block->getOrderIncrementId(); ?></td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */
+                echo __('Last History:') ?></th>
+            <td><?php echo __('History of order') ?></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

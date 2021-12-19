@@ -1,0 +1,20 @@
+{
+  "name": "yosto/module-order-attribute",
+  "description": "Add address attribute data to orders",
+  "require": {
+  },
+  "type": "magento2-module",
+  "version": "2.3.7",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Yosto\\OrderAttribute\\": ""
+    }
+  }
+}

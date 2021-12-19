@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <attribute>
+            <fieldset>
+                <customer>Additional Information</customer>
+                <address>Additional Information</address>
+                <datetime_format>m/d/Y</datetime_format>
+                <enable_relation_for_customer>1</enable_relation_for_customer>
+                <enable_relation_for_address>1</enable_relation_for_address>
+                <is_migrated_system>0</is_migrated_system>
+                <is_using_opc>0</is_using_opc>
+                <!--<allowed_image_extension>jpg,png,gif</allowed_image_extension>
+                <allowed_file_extension>pdf,zip,doc</allowed_file_extension>-->
+            </fieldset>
+        </attribute>
+    </default>
+</config>

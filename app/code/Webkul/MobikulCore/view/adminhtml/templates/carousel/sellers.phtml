@@ -1,0 +1,82 @@
+<div id="messages">
+    <div class="messages">
+        <div class="message message-notice notice">
+            <div data-ui-id="messages-message-notice">
+                <?= __("Applicable only when \"Carousel Type\" is selected as \"Seller Type\""); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<input data-form-part="mobikul_carousel_form" type="hidden" name="mobikul_carousel[seller_ids]" id="seller_ids"/>
+<script type="text/javascript">
+    require([
+            "jquery"
+        ], function($)  {
+            <?php
+            if (($internalBlock = $block->getLayout()->createBlock(
+                \Webkul\MobikulCore\Block\Adminhtml\Edit\Carousel\Tab\Carouselsellers::class
+            )) &&
+                    ($_gridJsObject = $internalBlock->getJsObjectName())
+                ):
+                ?>
+            var seller_ids = [];
+            var selectedSellers = '<?= $block->getCarouselSellersJson(); ?>';
+            if (selectedSellers)
+                seller_ids = selectedSellers.split(",");
+            $("#seller_ids").val(seller_ids);
+            $(document).on("click", "input.checkbox.admin__control-checkbox", function()  {
+                var thisVal = $(this).val();
+                if ($(this).is(":checked"))  {
+                    seller_ids.push(thisVal);
+                } else  {
+                    var index = seller_ids.indexOf(thisVal);
+                    if (index > -1)
+                        seller_ids.splice(index, 1);
+                }
+                $("#seller_ids").val(seller_ids.join());
+            });
+            function selectedSellerRowClick(grid, event)  {
+                if (!$(event.target).hasClass("checkbox"))  {
+                    var trElement = $(event.target).parents("tr");
+                    var checkbox = trElement.find("input:checkbox");
+                    var thisVal = checkbox.val();
+                    if (checkbox.is(":checked"))  {
+                        checkbox.prop("checked", false);
+                        var index = seller_ids.indexOf(thisVal);
+                        if (index > -1)
+                            seller_ids.splice(index, 1);
+                    } else  {
+                        checkbox.prop("checked", true);
+                        seller_ids.push(thisVal);
+                    }
+                    if ($("#seller_ids").val() != "")
+                        $("#seller_ids").val(seller_ids.join());
+                    else
+                        $("#seller_ids").val(seller_ids);
+                }
+            }
+
+            function selectedSellerRowInit(grid, row)  {
+                var checkbox = $(row).find("input:checkbox");
+                var childElements = row.childElements();
+                var childLength = childElements.length;
+                var checkbox = $(row).find("input:checkbox");
+                if($("#seller_ids").val() != "")  {
+                    var sellerids = $("#seller_ids").val().split(",");
+                    var checked = false;
+                    if(sellerids.indexOf(checkbox.val()) >= 0)  {
+                        checked = true;
+                        checkbox.prop("checked", true);
+                    }
+                }
+            }
+
+            setTimeout(function()  {
+                <?= $_gridJsObject ?>.initRowCallback  = selectedSellerRowInit;
+                <?= $_gridJsObject ?>.rowClickCallback = selectedSellerRowClick;
+                <?= $_gridJsObject ?>.rows.each(function(row){selectedSellerRowInit(<?= $_gridJsObject ?>, row)});
+            }, 300);
+        <?php   endif;   ?>
+    });
+</script>
+<?= $block->getChildHtml("mobikul.carousel.seller"); ?>

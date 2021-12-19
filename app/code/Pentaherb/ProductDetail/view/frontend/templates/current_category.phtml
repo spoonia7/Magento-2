@@ -1,0 +1,12 @@
+<?php
+if($block->getCurrentCategory()){ ?>
+<div class="product attribute category">
+    <strong class="type">Category</strong>
+    <div class="value"><?php echo $block->getCurrentCategory()->getName(); ?></div>
+</div>
+<?php }else if($block->getlayerCurrentCategory()){ ?>
+<div class="product attribute category">
+    <strong class="type">Category</strong>
+    <div class="value"><?php echo $block->getlayerCurrentCategory()->getName(); ?></div>
+</div>
+<?php } ?>

@@ -1,0 +1,218 @@
+.product-info-main .product-info-stock-sku {
+    display: block;
+    float: none;
+    padding-bottom: 10px;
+    padding-left: 0;
+    text-align: left;
+    vertical-align: top;
+}
+.product-info-main .product.attribute.category .type, .product-info-main .stock.available .type {
+    font-weight: normal;
+    margin-right: 5.5px;
+}
+.product-info-main .product.attribute.category .type::after, .product-info-main .stock.available .type::after {
+    content: ':';
+}
+.product-info-main .product.attribute.category .value, .product-info-main .stock.available .value{
+    display: inline-block;
+}
+.product-info-social-media{
+	width: 100%;
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.product-info-main .product.attribute.overview .value{
+    font-family: OpenSans;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: left;
+  color: #151515;
+}
+.product-info-main .product-info-stock-sku .type{
+    width: 25%;
+    display: inline-block;
+    font-family: OpenSans;
+    font-size: 17px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    margin-bottom: 16.5px;
+    color: #a9a9a9;
+    text-transform: capitalize;
+}
+.product-info-main .product-info-stock-sku .value{
+    font-family: OpenSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #151515;  
+  margin-bottom: 16.5px;
+}
+.product-info-main .product-info-price-addtocart .product-info-price{
+    display: inline-block;
+    width: auto;
+}
+.product-info-main .product-info-price-addtocart .product-add-form{
+    display: inline-block;
+    margin-top: 0;
+    padding-top: 0;
+    width: 70%;
+}
+.product-info-price .price-box .special-price .price-container.price-final_price .price{
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2fb836
+}
+.product-info-main .product-info-price .price-box .old-price .price{
+    font-family: Poppins;
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #a9a9a9;
+} 
+.product-info-price-addtocart .box-tocart #product-addtocart-button{
+    margin: 1.3px 0 5px 0;
+    padding: 18.2px 31.2px 16.8px 22.1px;
+    border-radius: 12px;
+    background-color: #ef8756;
+    border-color: #ef8756;
+    width: auto;
+}
+.product-info-main .product-info-price-addtocart .product-add-form .box-tocart {
+    margin-bottom: 0;
+    padding-top: 0;
+    margin-left: 40px;
+}
+.product-info-social-media .product-addto-links .action {
+    padding: 9.4px 20.5px 9.1px 11.4px;
+  border-radius: 12px;
+  border: solid 1px #ef8756;
+  background-color: #fff;
+  margin-right: 28.1px;
+}
+.product-info-social-media .product-addto-links .action span{
+    margin: 1.2px 0 0 6px;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: left;
+  color: #151515;
+}
+.product-info-main .product-info-price-addtocart{
+    padding: 26.2px 17.6px 21.1px 20.4px;
+  border-radius: 12px;
+  border: solid 1px #e4e4e4;
+  background-color: #fff;
+}
+.product-info-social-media .product-addto-links .action.towishlist span:before{
+    content: "\f004";
+    font-family:'FontAwesome';
+    color: #e5704b;
+    margin-right: 7px;
+}
+.product-info-social-media .product-addto-links .action.tocompare span:before{
+
+}
+.page-main .page-title-wrapper .page-title {
+
+}
+.product-info-main .product-info-stock-sku .available .value{
+  font-family: OpenSans;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6a983c;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+.product-info-main .product-info-stock-sku .category .value{
+    font-family: OpenSans;
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    color: #151515;
+    text-decoration: underline;
+}
+.product-info-main .box-tocart .field.qty{
+   display: inline-block; 
+   width: 121px;
+    margin: 0;
+    max-width: inherit;
+}
+.product-info-main .box-tocart .field.qty .qty-arrows input{
+    border-radius: 12px;
+  border: solid 1px #d1d1d1;
+  background-color: #f9f9f9;
+}
+.product-info-main .box-tocart .field.qty label.label,
+.product-info-main .mp-reward-earning,
+body.catalog-product-view  .more-views,
+body.catalog-product-view .qty-switcher-dec, 
+body.catalog-product-view .qty-switcher-inc{
+    display: none;
+}
+.product-info-main .product-info-price-addtocart .product-add-form .box-tocart .actions {
+     margin: 0 0 0 30px;
+    text-align: left;
+    width: auto;
+    max-width: inherit;
+    display: inline-block;
+    vertical-align: middle;
+}
+body .product-info-main .product.attribute.sku .type:after{
+    content: ':';
+}
+.product-info-main .box-tocart .field.qty select#qty {
+    border-radius: 12px;
+    border: solid 1px #d1d1d1;
+    background-color: #f9f9f9;
+}
+
+@media only screen and (min-width:768px){
+    .product-info-main .product-info-price-addtocart .product-info-price{
+        margin-right: 20px;
+    }
+    body.catalog-product-view .product-info-main{
+      width: 51%;
+    }
+    body.catalog-product-view .product.media{
+      width: 46%;
+    }
+}
+.product-info-social-media .product-addto-links .action.towishlist {
+    order: 2;
+}
+.product-info-social-media .product-addto-links {
+    display: flex;
+}

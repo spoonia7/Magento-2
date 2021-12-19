@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+
+<?php
+$collection = $block->getCustomerAccountCreateAttributes();
+
+$customerFieldSetTitle = $block->getCustomerFieldsetTitle();
+
+if(count($collection)>0):
+
+?>
+
+<fieldset class="fieldset create info">
+    <legend class="legend"><span><?php /* @escapeNotVerified */
+            echo $customerFieldSetTitle ?></span></legend>
+    <br>
+
+    <?php foreach ($collection as $attr): ?>
+
+        <?php if ($attr['frontend_input'] == 'text'): ?>
+
+            <?php $select = $block->getLayout()->createBlock('Yosto\CustomerAttribute\Block\Widget\Customer\Textfield'); ?>
+            <?php echo $select->setAttributeCode("{$attr['attribute_code']}")->toHtml(); ?>
+
+        <?php elseif ($attr['frontend_input'] == 'textarea'): ?>
+
+            <?php $select = $block->getLayout()->createBlock('Yosto\CustomerAttribute\Block\Widget\Customer\Textarea'); ?>
+            <?php echo $select->setAttributeCode("{$attr['attribute_code']}")->toHtml(); ?>
+
+        <?php elseif ($attr['frontend_input'] == 'date'): ?>
+
+            <?php $_date = $block->getLayout()->createBlock('Yosto\CustomerAttribute\Block\Widget\Customer\Date') ?>
+            <?php echo $_date->setAttributeCode($attr['attribute_code'])
+                ->setDate($attr['default_value'])
+                ->toHtml();
+            ?>
+
+        <?php elseif ($attr['frontend_input'] == 'select'): ?>
+
+            <?php $select = $block->getLayout()->createBlock('Yosto\CustomerAttribute\Block\Widget\Customer\Select'); ?>
+            <?php echo $select->setAttributeCode("{$attr['attribute_code']}")->toHtml(); ?>
+
+        <?php elseif ($attr['frontend_input'] == 'boolean'): ?>
+
+            <?php $select = $block->getLayout()->createBlock('Yosto\CustomerAttribute\Block\Widget\Customer\Yesno'); ?>
+            <?php echo $select->setAttributeCode("{$attr['attribute_code']}")->toHtml(); ?>
+
+        <?php endif; ?>
+    <?php endforeach; ?>
+</fieldset>
+
+<?php endif; ?>

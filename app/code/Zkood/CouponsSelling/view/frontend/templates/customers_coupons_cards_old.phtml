@@ -1,0 +1,67 @@
+<?php /** @var $block Zkood\CouponsSelling\Block\CustomerCoupons */ ?>
+<?php $couponsData = $block->getCustomerCoupons() ?>
+<?php if ($couponsData->getSize()) : ?>
+    <style>
+        .card {
+            text-align: center;
+            width: auto !important;
+        }
+        .card img {
+            max-width: 70%;
+        }
+        .canvas-qr {
+            display: block;
+            margin: auto;
+        }
+        .coupons
+        {
+            display: inline-block;
+            text-align: left;
+        }
+
+    </style>
+    <div class="row">
+        <ul class="coupons">
+            <?php foreach ($couponsData as $couponData): ?>
+                <?php $imageUrl = $couponData->getProduct()->getImage() ? $block->getBaseUrl() . 'pub/media/catalog/product' . $couponData->getProduct()->getImage() : $block->getViewFileUrl('Zkood_CouponsSelling::images/coupon.svg') ?>
+                <?php $available = $couponData->getValidTo() > date("Y-m-d H:i:s") && !$couponData->getIsRedeemed() ?>
+                <!--<div class="col-md-1 col-xs-6">-->
+                <li>
+                    <div class="card" style="width: 18rem;">
+                        <!--<img class="card-img-top"
+                         src="<?= str_replace("ar/", "", str_replace("en/", "", $imageUrl)) ?>"
+                         alt="Card image cap">-->
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php $productLink = (empty($couponData->getProduct()) ? '#' : $couponData->getProduct()->getProductUrl()); ?>
+                                <a href = "<?php $productLink ?> " ><?= $couponData->getProductName() ?></a></h5>
+                            <p class="card-text">
+                                <?php if(!empty($couponData->getProduct())): ?>
+                                    <strong>SKU: </strong><?= $couponData->getProduct()->getSku(); ?><br>
+                                <?php endif; ?>
+                                <span style="text-align: center">
+                        <i class="coupon-code-string" style="color: <?= $available ? 'green' : 'red' ?>"
+                           data-code="<?= $couponData->getCouponCode(); ?>">
+                            <?php if(!$available): ?>
+                                <del><?= $couponData->getCouponCode(); ?></del>
+                            <?php else: ?>
+                                <?= $couponData->getCouponCode(); ?>
+                            <?php endif; ?>
+                        </i>
+                        <canvas class="canvas-qr" id="<?= $couponData->getCouponCode(); ?>" width="50" height="50"></canvas>
+                    </span>
+                            </p>
+                        </div>
+                        <!--<div class="card-body">
+                        <a href="<?= $couponData->getProduct()->getProductUrl() ?>"
+                           class="card-link"><?= __('See Product') ?></a>
+                    </div>-->
+                    </div>
+                    <!-- Col</div>-->
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>-->
+<?php else: ?>
+    <p><?= __('No Coupons Yet!') ?></p>
+<?php endif; ?>

@@ -1,0 +1,19 @@
+<!--@subject {{trans "Your Purchased Coupons"}} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr class="email-summary">
+        <td>
+            <h1>{{trans 'Your coupons from order <span class="no-link">#%order_id</span>' order_id=$data.orderId |raw}}</h1>
+            <p>{{trans 'Placed on <span>%created_at</span>' created_at=$data.orderCreatedAt |raw}}</p>
+        </td>
+    </tr>
+    <tr class="email-information">
+        <td>
+            {{layout handle="zkood_email_purchased_coupons" coupons_data=$data.couponsData area="frontend"}}
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

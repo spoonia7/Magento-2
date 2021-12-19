@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Zkood_RecipesManagement::elements" title="Recipes Management" translate="title" module="Zkood_RecipesManagement" parent="Magento_Customer::customer" sortOrder="100000" resource="Zkood_RecipesManagement::elements"/>
+        <add id="Zkood_RecipesManagement::browse_recipes" title="Customer Recipes" translate="title" module="Zkood_RecipesManagement" sortOrder="100000" parent="Zkood_RecipesManagement::elements" action="zkood/recipe" resource="Zkood_RecipesManagement::browse_recipes"/>
+    </menu>
+</config>

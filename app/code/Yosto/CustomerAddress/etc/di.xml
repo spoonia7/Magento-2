@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Checkout\Block\Checkout\LayoutProcessor"
+                type="Yosto\CustomerAddress\Block\Checkout\LayoutProcessor"/>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="save-custom-data-in-quote"
+                type="Yosto\CustomerAddress\Plugin\Checkout\Model\ShippingInformationManagementPlugin"
+                sortOrder="10"/>
+    </type>
+    <type name="Magento\Checkout\Model\PaymentInformationManagement">
+        <plugin name="save-custom-data-for-billing-adddress"
+                type="Yosto\CustomerAddress\Plugin\Checkout\Model\PaymentInformationManagementPlugin"
+                sortOrder="10"/>
+    </type>
+    <type name="Magento\Checkout\Model\GuestPaymentInformationManagement">
+        <plugin name="save-guest-custom-data-for-billing-address"
+                type="Yosto\CustomerAddress\Plugin\Checkout\Model\GuestPaymentInformationManagementPlugin"
+                sortOrder="10"/>
+    </type>'
+    <!-- Load custom attributes on order billing, shipping address form -->
+    <type name="Magento\Sales\Block\Adminhtml\Order\Address\Form">
+        <plugin name="add-custom-attributes-before-load-form"
+                type="Yosto\CustomerAddress\Plugin\Order\Address\FormPlugin"/>
+    </type>
+    <type name="Magento\Sales\Controller\Adminhtml\Order\AddressSave">
+        <plugin name="update-custom-attribute-when-update-order-address"
+                type="Yosto\CustomerAddress\Plugin\Order\Address\AddressSavePlugin"/>
+    </type>
+    <!-- Load custom attributes on create order form in admin -->
+    <type name="Magento\Sales\Block\Adminhtml\Order\Create\Billing\Address">
+        <plugin name="add-custom-attributes-to-admin-order-billing-form"
+                type="Yosto\CustomerAddress\Plugin\Order\Address\Admin\BillingAddressFormPlugin"/>
+    </type>
+    <type name="Magento\Sales\Block\Adminhtml\Order\Create\Shipping\Address">
+        <plugin name="add-custom-attributes-to-admin-order-shipping-form"
+                type="Yosto\CustomerAddress\Plugin\Order\Address\Admin\ShippingAddressFormPlugin"/>
+    </type>
+    <!-- Load custom attributes for order address info in the admin order and the customer dashboard !-->
+    <type name="Magento\Sales\Model\Order\Address\Renderer">
+        <plugin name="add-custom-attribute-before-render"
+                type="Yosto\CustomerAddress\Plugin\Order\Address\RendererPlugin"/>
+    </type>
+
+    <type name="Magento\Checkout\Controller\Account\Create">
+        <plugin name="create-account-after-checkout-success"
+                type="Yosto\CustomerAddress\Plugin\Controller\Account\CheckoutCreateAccountPlugin"/>
+    </type>
+</config>

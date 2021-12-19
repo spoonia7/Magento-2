@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul Software.
+ * 
+ * PHP version 7.0+
+ *
+ * @category  Webkul
+ * @package   Webkul_MobikulMp
+ * @author    Webkul <support@webkul.com>
+ * @copyright 2010-2019 Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html ASL Licence
+ * @link      https://store.webkul.com/license.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="webkul" translate="label" sortOrder="10">
+            <label>Webkul</label>
+        </tab>
+        <section id="mobikulmp" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Seller Admin Chat</label>
+            <tab>webkul</tab>
+            <resource>Webkul_MobikulMp::config_mobikulmp</resource>
+            <group id="admin" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Admin Details For Chat</label>
+                <field id="email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Admin Email Address(as customer)</label>
+                    <tooltip>put email address of admin with which admin created customer account in front end.</tooltip>
+                    <comment>eg. admin@example.com</comment>
+                    <validate>validate-email</validate>
+                </field>
+            </group>
+        </section>
+        <section id="mobikul">
+            <group id="configuration">
+                <field id="carousel_seller" translate="label" sortOrder="4" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Carousel Seller in home page?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="seller_carousel_configuration" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enter the value of Seller Carousel</label>
+                    <comment>Please enter the value between 5 to 15 (eg. 5)</comment>
+                    <validate>required-entry validate-digits validate-not-negative-number validate-digits-range digits-range-5-15</validate>
+                    <depends>
+                        <field id="carousel_seller">1</field>
+                    </depends>
+                </field>
+                <field id="carousel_brand" translate="label" sortOrder="4" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Carousel Brand Group in home page?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

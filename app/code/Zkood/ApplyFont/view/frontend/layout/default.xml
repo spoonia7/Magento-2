@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="before.body.end">
+        <block class="Magento\Framework\View\Element\Template" name="zkood.ask-whatsapp" template="Zkood_ApplyFont::wa.phtml"></block>
+    </referenceContainer>
+    <!--<referenceContainer name="after.body.start">-->
+    <!--<block class='Company\Module\Block\Module' name="company_module" as="company_module" after="footer_links" template="Company_Module::tracking.phtml"/>-->
+    <!--</referenceContainer>-->
+</body>
+</page>

@@ -1,0 +1,65 @@
+<?php /** @var $block Zkood\CouponsSelling\Block\CustomerCoupons */ ?>
+<?php $couponsData = $block->getCustomerCoupons() ?>
+<?php if ($couponsData->getSize()) : ?>
+    <style>
+        .card {
+            text-align: center;
+            width: auto !important;
+        }
+        .card img {
+            max-width: 70%;
+        }
+        .canvas-qr {
+            display: block;
+            margin: auto;
+        }
+        .coupons
+        {
+            display: inline-block;
+            text-align: left;
+        }
+        .border_bottom {
+            border-bottom: 1px solid black;
+        }
+        p.center_vertically
+        {
+            margin-top: 2.2rem;
+            margin-bottom: 2.2rem;
+        }
+    </style>
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="border_bottom" scope="col"><?= __('Product') ?></th>
+            <th class="border_bottom" scope="col"><?= __('SKU') ?></th>
+            <th class="border_bottom" scope="col"><?= __('Coupon') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($couponsData as $couponData): ?>
+            <?php $imageUrl = $couponData->getProduct()->getImage() ? $block->getBaseUrl() . 'pub/media/catalog/product' . $couponData->getProduct()->getImage() : $block->getViewFileUrl('Zkood_CouponsSelling::images/coupon.svg') ?>
+            <?php $available = $couponData->getValidTo() > date("Y-m-d H:i:s") && !$couponData->getIsRedeemed() ?>
+            <?php $productLink = (empty($couponData->getProduct()) ? '#' : $couponData->getProduct()->getProductUrl()); ?>
+            <tr>
+
+                <td>
+                    <h5>
+                        <a href="<?= $productLink ?>">
+                        <?= $couponData->getProductName() ?>
+                    </a>
+
+                    </h5>
+                </td>
+
+                    <?php if(!empty($couponData->getProduct())): ?>
+                <td><p class="center_vertically"><?= $couponData->getProduct()->getSku(); ?></p></td>
+                    <?php endif; ?>
+
+                <td><p class="center_vertically"><?= $couponData->getCouponCode() ?></p></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p><?= __('No Coupons Yet!') ?></p>
+<?php endif; ?>

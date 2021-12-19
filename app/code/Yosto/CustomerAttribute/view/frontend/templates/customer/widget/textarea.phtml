@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+
+<?php
+$attribute = $block->getAttribute();
+$attributeValue = $block->getAttributeValue();
+$attributeCode = $block->getAttributeCode();
+$attributeLabel = $attribute->getStoreLabel() != null ? $attribute->getStoreLabel() : $attribute->getFrontendLabel();
+$attributeFrontendClass = $attribute->getFrontendClass();
+$isRequired = $block->isRequired();
+?>
+<div
+    class="field <?php echo $attributeCode; ?> <?php echo $isRequired == 1 ? 'required' : '' ?>">
+    <label for="<?php echo $attributeCode ?>" class="label"><span><?php /* @escapeNotVerified */
+            echo $attributeLabel; ?></span></label>
+
+    <div class="control">
+        <textarea name="<?php echo $attributeCode ?>"
+                  id="<?php echo $attributeCode ?>"
+                  title="<?php /* @escapeNotVerified */
+                  echo $attributeLabel; ?>"
+                  class="textarea <?php echo $attributeFrontendClass; ?>" <?php echo $isRequired == 1 ? "data-validate='{required:true}'" : '' ?>><?php echo $block->escapeHtml($attributeValue); ?></textarea>
+    </div>
+</div>

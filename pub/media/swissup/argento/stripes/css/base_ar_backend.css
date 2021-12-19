@@ -1,0 +1,39 @@
+.page-header{background-color:#001c33;}
+.page-header .header.content .block-search .action.search{background:#ef8756;}
+.page-header .header.content .block-search .action.search:hover{background:#ef8756;}
+.page-header .switcher.customer.dropdown{border-color:rgba(239,134,86, 0.3);}
+.page-header .switcher.customer.dropdown:hover{border-color:#ef8756;}
+.action.primary{background:#42ca49;border-color:#42ca49;}
+button, .abs-revert-to-action-secondary, .paypal-review .block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.cancel, .block-compare .action.primary, .cart-summary .block .actions-toolbar > .primary .action.primary, .cart-summary .form.giftregistry .fieldset .action.primary, .paypal-review-discount .actions-toolbar .action.primary, .paypal-review-discount .actions-toolbar .action.cancel, .cart-discount .actions-toolbar .action.primary, .cart-discount .actions-toolbar .action.cancel, .product.data.items .review-add .review-form .action.submit.primary{border-color:#ef8756;color:#ef8756;}
+button:hover, .abs-revert-secondary-color:hover, .abs-revert-to-action-secondary:hover, .paypal-review .block .actions-toolbar .action.primary:hover,.abs-discount-block .actions-toolbar .action.primary:hover, .abs-discount-block .actions-toolbar .action.cancel:hover, .block-compare .action.primary:hover, .cart-summary .block .actions-toolbar > .primary .action.primary:hover, .cart-summary .form.giftregistry .fieldset .action.primary:hover, .paypal-review-discount .actions-toolbar .action.primary:hover, .paypal-review-discount .actions-toolbar .action.cancel:hover, .cart-discount .actions-toolbar .action.primary:hover, .cart-discount .actions-toolbar .action.cancel:hover, .product.data.items .review-add .review-form .action.submit.primary:hover, /*ACTIVE STATE*/ button:active, .abs-revert-secondary-color:active, .abs-revert-to-action-secondary:active, .paypal-review .block .actions-toolbar .action.primary:active,.abs-discount-block .actions-toolbar .action.primary:active, .abs-discount-block .actions-toolbar .action.cancel:active, .block-compare .action.primary:active, .cart-summary .block .actions-toolbar > .primary .action.primary:active, .cart-summary .form.giftregistry .fieldset .action.primary:active, .paypal-review-discount .actions-toolbar .action.primary:active, .paypal-review-discount .actions-toolbar .action.cancel:active, .cart-discount .actions-toolbar .action.primary:active, .cart-discount .actions-toolbar .action.cancel:active, .product.data.items .review-add .review-form .action.submit.primary:active, /*FOCUS STATE*/ button:focus, .abs-revert-secondary-color:focus, .abs-revert-to-action-secondary:focus, .paypal-review .block .actions-toolbar .action.primary:focus,.abs-discount-block .actions-toolbar .action.primary:focus, .abs-discount-block .actions-toolbar .action.cancel:focus, .block-compare .action.primary:focus, .cart-summary .block .actions-toolbar > .primary .action.primary:focus, .cart-summary .form.giftregistry .fieldset .action.primary:focus, .paypal-review-discount .actions-toolbar .action.primary:focus, .paypal-review-discount .actions-toolbar .action.cancel:focus, .cart-discount .actions-toolbar .action.primary:focus, .cart-discount .actions-toolbar .action.cancel:focus, .product.data.items .review-add .review-form .action.submit.primary:focus{background:#ef8756;border-color:#ef8756;}
+.product-add-form .actions .product-addto-links a, .bundle-actions-container .product-addto-links a, .products-grid .product-item-actions .action.towishlist, .products-list .product-item-actions .action.towishlist, .products-grid .product-item-actions .action.tocompare, .products-list .product-item-actions .action.tocompare{background-color:#f8f8f8;color:#2e2e2e;}
+.product-add-form .actions .product-addto-links a:hover, .bundle-actions-container .product-addto-links a:hover, .product-add-form .actions .product-addto-links a:focus, .bundle-actions-container .product-addto-links a:focus, .product-add-form .actions .product-addto-links a:active, .bundle-actions-container .product-addto-links a:active, .products-grid .product-item-actions .action.towishlist:hover, .products-list .product-item-actions .action.towishlist:hover, .products-grid .product-item-actions .action.tocompare:hover, .products-list .product-item-actions .action.tocompare:hover{background-color:#f8f8f8;color:#2e2e2e;}
+.nav-sections{background-color:#001c33;}
+.navigation .level0 > .level-top:hover,.navigation .level0 > .level-top.ui-state-focus{color:#ef8756;}
+.navigation .level0.active > .level-top,.navigation .level0.has-active > .level-top{color:#ef8756;}
+.nav-sections .navigation .navpro-departments a.level-top{background-color:#ef8756;}
+.nav-sections .navigation .navpro-departments.level0 > .level-top:hover, .nav-sections .navigation .navpro-departments.level0 > .level-top.ui-state-active, .nav-sections .navigation .navpro-departments.level0 > .level-top.ui-state-focus, .nav-sections .navigation .navpro-departments.level0.active > .level-top:hover, .nav-sections .navigation .navpro-departments.level0.active > .level-top.ui-state-active, .nav-sections .navigation .navpro-departments.level0.active > .level-top.ui-state-focus{color:#ef8756;}
+.nav-sections .navigation .navpro-departments .navpro-dropdown-level1 .children .level1:hover > a{color:#ef8756;}
+.nav-sections .navigation .navpro-departments .navpro-dropdown-level1 .children .level1:hover > a > .navpro-icon-caret:before{color:#ef8756;}
+.page-footer{background-color:#262c34;}
+h1, h1.page-title{font-family:'Almarai', sans-serif;}
+.top-container .banner-argento-stripes-benefits {
+    width: 100% !important;
+}
+.hl-blue.block-highlight.hl-magazine>.block-title .block-title-background {
+    background-color: #51bce6;
+}
+.product-info-main .product-info-stock-sku {
+    float: left !important;
+}
+@media (min-width: 768px), print {
+    .nav-sections .orientation-horizontal a.level-top {
+        font-size: 16px !important;
+    }
+    .page-header .switcher.customer:hover {
+        border-color: #ef8756 !important;
+    }
+}
+.panel.wrapper {
+    display: none;
+}

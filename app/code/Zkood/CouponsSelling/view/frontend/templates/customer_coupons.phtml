@@ -1,0 +1,29 @@
+<?php /** @var $block Zkood\CouponsSelling\Block\CustomerCoupons */ ?>
+<?php $couponsData = $block->getCustomerCoupons() ?>
+<?php if ($couponsData->getSize()) : ?>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col"><?= __('Coupon Code') ?></th>
+            <th scope="col"><?= __('QR') ?></th>
+            <th scope="col"><?= __('Valid To') ?></th>
+            <th scope="col"><?= __('Status') ?></th>
+            <th scope="col"><?= __('Product') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($couponsData as $couponData): ?>
+            <tr>
+                <td class="coupon-code-string" data-code="<?= $couponData->getCouponCode() ?>"><?= $couponData->getCouponCode() ?></td>
+                <td><canvas id="<?= $couponData->getCouponCode() ?>"></canvas></td>
+                <td><?= $couponData->getValidTo() ?></td>
+                <td><?= ($couponData->getValidTo() > date("Y-m-d H:i:s") && !$couponData->getIsRedeemed()) ?
+                        '<span style="color: green"> Available</span>' : '<span style="color: red"> Not Available</span>' ?></td>
+                <td><?= $couponData->getProduct()->getName() ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p><?= __('No Coupons Yet!') ?></p>
+<?php endif; ?>

@@ -1,0 +1,59 @@
+<?php /** @var $block Zkood\CouponsSelling\Block\SellerCoupons */ ?>
+<?php
+$redeemedCoupons = $block->getRedeemedCoupons();
+$availableCoupons = $block->getAvailableCoupons();
+$expiredCoupons = $block->getExpiredCoupons();
+$totalCoupons = $block->getTotalCoupons();
+
+$redeemedCouponsData = $block->getRedeemedCouponsData();
+?>
+<hr>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col"><?= __('Redeemed Coupons') ?></th>
+        <th scope="col"><?= __('Available Coupons') ?></th>
+        <th scope="col"><?= __('Expired Coupons') ?></th>
+        <th scope="col"><?= __('Total') ?></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><?= $redeemedCoupons->getSize() ?></td>
+        <td><?= $availableCoupons->getSize() ?></td>
+        <td><?= $expiredCoupons->getSize() ?></td>
+        <td><?= $totalCoupons->getSize() ?></td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<?php if ($redeemedCouponsData->getSize()): ?>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col"><?= __('Redeemed Coupon') ?></th>
+            <th scope="col"><?= __('Product') ?></th>
+            <th scope="col"><?= __('Customer') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($redeemedCouponsData as $couponData): ?>
+            <tr>
+                <td><?= $couponData->getCouponCode() ?></td>
+                <td>
+                    <a href="<?= $couponData->getProduct()->getProductUrl() ?>">
+                        <?= $couponData->getProduct()->getName() ?>
+                    </a>
+                </td>
+                <td>
+                    <?= $couponData->getCustomer() ?
+                        $couponData->getCustomer()->getFirstName() . " " . $couponData->getCustomer()->getLastName()
+                        : __('Guest') ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<hr>
+<?php endif; ?>
+
